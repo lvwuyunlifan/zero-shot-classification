@@ -6,7 +6,7 @@ from sklearn.preprocessing import normalize
 
 def unpickle(file):
     fo = open(file, 'rb')
-    dict = cPickle.load(fo)
+    dict = cPickle.load(fo)#, encoding='iso-8859-1')
     fo.close()
     return dict
 
@@ -110,7 +110,7 @@ def classify_embedding():
     # Y_pred_validation = neigh.predict(validaiton_embeddings)
     # print Y_2_validation
     # print Y_pred_validation
-    print accuracy_score(Y_2_validation, Y_pred_validation)
+    print (accuracy_score(Y_2_validation, Y_pred_validation))
 
     for i,j in zip(Y_2_validation, Y_pred_validation):
         print (i,j)
@@ -134,7 +134,7 @@ def regression_embedding():
     Y_8_validation = np.array(Y_validation)
     X_8_validation = np.array(X_validation)
 
-
+    # print(X_8_train[0], Y_8_train[0])
     regression_based.train(X_8_train, Y_8_train)
 
     Y_2_validation = np.array(Y_validation)
@@ -168,7 +168,7 @@ def regression_embedding():
     Y_pred_validation = neigh.predict(validaiton_embeddings)
     # print Y_2_validation
     # print Y_pred_validation
-    print accuracy_score(Y_2_validation, Y_pred_validation)
+    print(accuracy_score(Y_2_validation, Y_pred_validation))
 
 
     # data = np.vstack((validaiton_embeddings, targets_embeddings))

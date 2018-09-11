@@ -2,7 +2,7 @@ import numpy as np
 
 def get_vectors():
     vectors = {}
-    f=open("glove.6B.50d.txt")
+    f=open("./glove-dataset/glove.6B.50d.txt", 'r')#, encoding='utf-8')
     classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse','ship', 'truck']
     for i in f:
         word = i.split()[0]
